@@ -63,7 +63,13 @@ public class ZainoController {
     	txtSoluzione.appendText("Tempo impiegato: "+model.getElapsedTime()+"ms\n");
     	
     }
-
+    
+    // Non popolo la tendina nell'initialize perchè viene chiamato troppo presto!
+    // Guardando il main, infatti, si vede che l'initialize viene chiamato subito dopo
+    // aver letto l'fxml, quindi non ho i "dati" per popolare la tendina a quel punto
+    // Se dovessi popolarla con qualcosa che non usi i dati (es. numeri da 1 a 100), posso
+    // farlo nell'initialize
+   
     @FXML
     void initialize() {
         assert boxProblema != null : "fx:id=\"boxProblema\" was not injected: check your FXML file 'Zaino.fxml'.";

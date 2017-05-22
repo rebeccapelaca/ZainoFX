@@ -13,7 +13,7 @@ import it.polito.tdp.zaino.model.Zaino;
 public class ZainoDAO {
 	
 	public List<Zaino> listZaino() {
-		String sql = "select id, capacity from problema" ;
+		String sql = "SELECT id, capacity FROM problema" ;
 		
 		try {
 			Connection c = DBConnect.getConnection() ;
@@ -41,7 +41,7 @@ public class ZainoDAO {
 	}
 
 	public List<Pezzo> listPezzo(Zaino z) {
-		String sql = "select id, peso, costo from pezzo where id_problema=?" ;
+		String sql = "SELECT id, peso, costo FROM pezzo WHERE id_problema=?" ;
 		
 		try {
 			Connection c = DBConnect.getConnection() ;
